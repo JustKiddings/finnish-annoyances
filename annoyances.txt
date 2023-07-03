@@ -11,6 +11,8 @@
 ! Unbreak End
 
 ! Generic filters
+*###comments
+*##.comments-area
 *##.alma-footer
 *##.diks-box__image-wrapper
 *##.diks-footer__bottom-row
@@ -38,6 +40,10 @@
 *##h2.diks-title--section.diks-title:has-text(Luetuimmat)
 *##a[href="#kommentit"]:upward(div)
 *##.diks-display-ad
+*##.fa.fa-user
+!*##div:matches-attr(class="/tags/")
+!*##div:matches-attr(class="/tag-c/")
+
 ! Generic Filters End
 
 ! Generic URL Params
@@ -50,7 +56,7 @@
 ! Generic URL Params Remove End
 
 ! Network Filters
-||api.il.fi/v*/articles/*$domain=kauppalehti.fi|talouselama.fi|arvopaperi.fi|etuovi.fi|vuokraovi.com|tivi.fi|mikrobitti.fi|tekniikkatalous.fi,important
+||api.il.fi/v*/articles/*$domain=kauppalehti.fi|talouselama.fi|arvopaperi.fi|etuovi.fi|vuokraovi.com|tivi.fi|mikrobitti.fi|tekniikkatalous.fi|uutissuomi.fi,important
 ||assets.tunnus.almamedia.fi/cookies/*$important
 ||cdn.almamedia.fi/almacmp/*$important
 ||cdn.almamedia.fi/script/alma-require/*/require.min.js$script,domain=kauppalehti.fi,important
@@ -66,36 +72,16 @@
 ||www.*.fi/sw.js$script,1p,important
 ||www.*.fi/.ajax/segmentTeaser$xhr,1p,important
 ||www.*.fi/theme/css/images/third_party/*$image
+/*.fi/wp-includes/js/comment-reply.min.js?$script,important
+||www.instagram.com/embed.js$script,important
+||platform.instagram.com/*/embeds.js$script,important
+||www.tiktok.com/embed.js$script,important
+||mssdk-va.tiktok.com^$ping,important
+||tili.sanoma.fi/public/widget/js/*$script,important
+
 ! Network Filters End
 
 ! Website specific filters
-
-! Anna.fi
-anna.fi##.contactus__newsletter
-anna.fi##.contactus__some
-anna.fi##.leftmost-items.grid
-anna.fi###content > .widget-area_single.widget-area
-anna.fi###infinite-container
-anna.fi###verkkopalvelut
-anna.fi##a.footer__button[href="/tilaa?promoPosition=footer-single"]:has-text(Tilaa lehti)
-anna.fi##a[href*="/mainos/mainos"]:upward(figure)
-anna.fi##a[href="https://anna.fi/klubi"]:has-text(Anna-klubi):upward(li)
-anna.fi##a[href="https://anna.fi/klubi"]:upward(figure)
-anna.fi##aside#right-sidebar
-anna.fi##div.leftmost-items_links
-anna.fi##div.om-ajax-load__controls-infinite
-anna.fi##div.template.footer-bar.open
-anna.fi##footer.content__footer
-anna.fi##section.widget.commercial-postlisting
-anna.fi##section#recommended_read-also
-anna.fi##section#rssfeeds-1
-anna.fi##span:has-text(Kirjaudu):upward(a)
-
-||anna.fi/awpo/img/*/*/*/*/banneri*$image
-||anna.fi/awpo/img/s3/2023/05/11135441/*$image
-||anna.fi/wp-admin/admin-ajax.php$important
-||anna.fi/wp-content/themes/om-anna-theme/assets/img/logo-otavamedia.png$image
-||kannet.kuvalehdet.fi/anna/w200_anna.jpg$image
 
 ! Aamulehti.fi
 www.aamulehti.fi##.article-actions__desktop-buttons>button.ab-test-to-comments-btn
@@ -135,6 +121,66 @@ www.aamulehti.fi##ul.nav-bar__link-bar:upward(div.width-full)
 
 ||tili.sanoma.fi^$domain=aamulehti.fi,important
 
+! aksa.fi
+aksa.fi##li>[href="https://aksa.fi/mainostajalle/"]
+aksa.fi##.sivupalkkilistaukset
+aksa.fi##.comments-area
+
+! alueviesti.fi
+alueviesti.fi##li > .nav-link:has-text(Kaupallinen yhteistyö)
+alueviesti.fi##.login-button
+alueviesti.fi###after_article
+alueviesti.fi###front_content_1_aside
+
+! Anna.fi
+anna.fi##.contactus__newsletter
+anna.fi##.contactus__some
+anna.fi##.leftmost-items.grid
+anna.fi###content > .widget-area_single.widget-area
+anna.fi###infinite-container
+anna.fi###verkkopalvelut
+anna.fi##a.footer__button[href="/tilaa?promoPosition=footer-single"]:has-text(Tilaa lehti)
+anna.fi##a[href*="/mainos/mainos"]:upward(figure)
+anna.fi##a[href="https://anna.fi/klubi"]:has-text(Anna-klubi):upward(li)
+anna.fi##a[href="https://anna.fi/klubi"]:upward(figure)
+anna.fi##aside#right-sidebar
+anna.fi##div.leftmost-items_links
+anna.fi##div.om-ajax-load__controls-infinite
+anna.fi##div.template.footer-bar.open
+anna.fi##footer.content__footer
+anna.fi##section.widget.commercial-postlisting
+anna.fi##section#recommended_read-also
+anna.fi##section#rssfeeds-1
+anna.fi##span:has-text(Kirjaudu):upward(a)
+
+||anna.fi/awpo/img/*/*/*/*/banneri*$image
+||anna.fi/awpo/img/s3/2023/05/11135441/*$image
+||anna.fi/wp-admin/admin-ajax.php$important
+||anna.fi/wp-content/themes/om-anna-theme/assets/img/logo-otavamedia.png$image
+||kannet.kuvalehdet.fi/anna/w200_anna.jpg$image
+
+! alibi.fi
+alibi.fi###navigation--secondary > .float--left.navi__magazine
+alibi.fi##li>[href="https://alibi.fi/tilaajapalvelut/"]
+alibi.fi##.rssfeed-5.rssfeed.sidebar-block.omwidget
+alibi.fi##a.footer-button:has-text(Tilaa lehti)
+alibi.fi##.share-tools
+alibi.fi###verkkopalvelut
+
+||feed-api.vik.fi/v*/public/*$important
+
+! apteekkari.fi
+www.apteekkari.fi##a:has-text(Tilaa)
+www.apteekkari.fi##a[href*="http://extra.epaper.fi/login/apteekkari"]:upward(div)
+www.apteekkari.fi##a[href*="mailto:"]
+www.apteekkari.fi##.footer__some
+www.apteekkari.fi##.site-header
+www.apteekkari.fi##div>div>h3:has-text(Lue lisää aiheesta):upward(4)
+www.apteekkari.fi##ul.job-listing:upward(.container)
+
+||www.apteekkari.fi/media/2-apteekkari.fi/bannerit/g-kapeat-bannerit/cache/tilaa_apteekkari*.jpg$image
+||www.apteekkari.fi/media/2-apteekkari.fi/kannet/cache/apteekkari*.jpg$image
+
 ! Arvopaperi.fi
 www.arvopaperi.fi##a[href*="/aiheet/vain-tilaajille"]:has-text(Tilaajille):upward(div)
 www.arvopaperi.fi##a[href*="/analyysi"]:has-text(Analyysit):upward(1)
@@ -151,27 +197,163 @@ www.arvopaperi.fi##div>div>div>span:has-text(Tilaajille:):upward(6)
 www.arvopaperi.fi##h1:has-text(Toimituksen valinnat):upward(1)
 www.arvopaperi.fi##section>div:style(margin-bottom: 0px !important;)
 www.arvopaperi.fi##title:has-text(Tilaajille):upward(a)
+www.arvopaperi.fi##div>div>div>a:has-text(Tilaa Arvopaperi)
+www.arvopaperi.fi##div>div>div>a:has-text(Ilmoita Arvopaperissa)
+www.arvopaperi.fi##div>div>div>div:matches-css(background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255)))
+www.arvopaperi.fi##div>hr:upward(div)
+www.arvopaperi.fi##section>div>div>a[href*="mailto:?subject"]:upward(1)
+www.arvopaperi.fi##footer>div>p:has-text(Tämä artikkeli liittyy aiheeseen):upward(div)
+www.arvopaperi.fi##div>div>div>a:has-text(Uutiskirje):upward(1)
+
+! autotalli.com
+www.autotalli.com##.marketplaceHeader
+www.autotalli.com##div#wrapper4:style(margin-top: 81px !important;)
+
+||www.autotalli.com/js/common/google-analytics*.js$important
+||www.autotalli.com/js/common/jquery.cookie-*.js$important
+
+! bittiraha.fi
+||smushcdn.com/*/wp-content/uploads/*/*/bittimaatti_gif_banner.gif*$image
+
+! blogbook.fi
+blogbook.fi###front-welcome
+blogbook.fi##.mailchimp.text-center.sidebar-block
+blogbook.fi##.widget.sidebar-block
+blogbook.fi###topfooter
+
+! blogit.fi
+www.blogit.fi##.box_telsu
+www.blogit.fi##a#toplst:upward(1)
+www.blogit.fi###hat
+
+||www.suomi24.fi/viihde/nosto_gen$subdocument,important
+||www.telsu.fi/dyn2$subdocument,important
+||www.nauris.fi/nosto_gen$subdocument,important
+
+! caravan-lehti.fi
+caravan-lehti.fi##nav>div>ul>li>a:has-text(Tilaa)
+caravan-lehti.fi##nav>div>ul>li>a[href*="kirjaudu"]
+caravan-lehti.fi##section>div>div>p>.label-subscribers:upward(section)
+caravan-lehti.fi##.comments-link
+caravan-lehti.fi##section>div>div>div>div>p>span.label-subscribers:upward(.post)
+caravan-lehti.fi##.head>h2:has-text(Testit):upward(2)
+caravan-lehti.fi##.widget_caravanlehti-latest-magazine.widget
+caravan-lehti.fi##.widget_caravanlehti-plus-posts.widget
+caravan-lehti.fi##.widget_caravanlehti-most-read-posts.widget
+caravan-lehti.fi##footer>div>div>div>ul>li>a[aria-label*="Ulkoinen sivusto"]:upward(ul)
+caravan-lehti.fi##.head>h2:has-text(Podcast):upward(2)
+caravan-lehti.fi##.share
+caravan-lehti.fi##.container > h2:has-text(Lue seuraavaksi):upward(section)
+caravan-lehti.fi##.tags
+
+||caravan-lehti.fi//content/plugins/air-cookie/*$script,important
+||caravan-lehti.fi/media/xCaravan-*_kansi.jpg.*.*.*.webp$image
+
+! como.fi
+www.como.fi##nav>div>ul>li>a[href*="popmedia.fi"]:upward(section)
+www.como.fi##div>div>div>span:has-text(Luetuimmat jutut):upward(2)
+www.como.fi##div.w-full:matches-attr(class="/bg-episodi/")
+www.como.fi##div>a#pianoLogin:upward(div)
+www.como.fi##div>div>div>div>a[rel="nofollow"]:upward(5)
+www.como.fi##div>div>div>span:has-text(Luetuimmat nyt):upward(4)
+www.como.fi##aside#secondary.widget-area
+www.como.fi##footer>div>div>div>div>a[href*=".com"]:upward(div)
+www.como.fi##div>div>div>span:has-text(Lisää luettavaa):upward(2)
+
+||buy-eu.piano.io/api/v*/anon/assets/*$script,important
+||www.como.fi/wp-content/themes/popmedia2030/assets/js/piano.js$script,important
+||apresolve.spotify.com^$xhr,domain=open.spotify.com,important
+||gew4-spclient.spotify.com/gabo-receiver-service/public/v3/events$ping,1p,important
+||spclient.wg.spotify.com/gabo-receiver-service/public/v3/events$ping,1p,important
+||open.spotify.com/embed/*$subdocument,important
+||widgets.spklw.com/v*/widgets/*$xhr,domain=www.como.fi,important
+
+! eeva.fi
+www.eeva.fi##div>div>div>a[href*="lehtitilaukset.a-lehdet.fi"]>span:has-text(Tilaa lehti):upward(2)
+www.eeva.fi##div:matches-attr(class="/comments__component/"):upward(3)
+www.eeva.fi##div>div>div:matches-attr(class="/share__component/"):upward(2)
+www.eeva.fi##div>div>div:matches-attr(class="/taxonomies/"):upward(2)
+www.eeva.fi##div[data-element="ContentRecommendationBlock"]
+www.eeva.fi##div>div>div:matches-attr(class="/ContentFlowBlock/"):upward(2)
+www.eeva.fi##div:matches-attr(class="/FooterV2__FooterContainer/")>div>div:matches-attr(class="/StyledLogoReel/")
+www.eeva.fi##div>div>div:matches-attr(class="/relatedContent/"):upward(2)
+www.eeva.fi##div>div>div>div:has-text(podcastit)
+www.eeva.fi##div>div>div:matches-attr(class="/Ad__AdRoot/"):upward(2)
+www.eeva.fi##div#root>div>div>div>div:matches-attr(class="/DividerBlock__Divider/"):upward(1)
+www.eeva.fi##div[data-element="NewsletterSubscriptionBlock2"]
+www.eeva.fi##div>div>div>a[href*="a-lehdet.fi/aiheet/mediaratkaisut?"]:upward(3)
+www.eeva.fi##div:matches-attr(class="/FooterV2__StyledSocialNavigation/")
+www.eeva.fi##div>a>div:has-text(Hoida tilausasiat):upward(2)
+www.eeva.fi##div>div>a:matches-attr(class="/LabelS/")
+www.eeva.fi##div>div>div:has-text(Luetuimmat):matches-attr(class="/ContentHeading__StyledHeading/"):upward(2)
+
+! elmotv.com
+elmotv.com##div.rivi.kehys>div.solu.solu8:style(width: 100% !important;)
+elmotv.com##main>div>p>a[href*="stake.com"]
+elmotv.com##.luelisaa
+elmotv.com##.paa_footer:style(margin-top: 0px !important;)
+elmotv.com##.paasisalto:style(margin-bottom: 0px !important;)
+elmotv.com##main>div>p:has-text(/\s$/)
+elmotv.com##div>section>img.paakuva:style(height: 450px !important; float: left)
+elmotv.com##.paakuva_kuvateksti:style(clear: left)
+elmotv.com##div.paasisalto>main>div>[href*="https://twitter.com/"]
+
+||elmotv.com/wp-content/uploads/*/*/*-banneri-*.png$image
+
+! eralehti.fi
+eralehti.fi##.NativeAdHolder_title > span:has-text(Mainos):upward(5)
+eralehti.fi##.WhyOrder_why-order:upward(aside)
+eralehti.fi##.Sidebar_popular
+eralehti.fi##div>div>div>a[href*="/tilaa"]
+eralehti.fi##div>div>div>a[href*="com/eralehti"]
+eralehti.fi###login-button
 
 ! Etuovi.com
 www.etuovi.com###uutiskirje
 www.etuovi.com##h2:has-text(Anna asiantuntijan myydä):upward(6)
+
+! findance.com
+www.findance.com##body:style(margin: 0)
+www.findance.com##footer>div>ul>li>div>p>a>i:matches-attr(class=/fa-[fi]/)
+
+! finnkino.fi
+www.finnkino.fi##div>p>a[href*=".com/"]:upward(div)
+
+||ninchat.com/customer/finnkino/*$domain=finnkino.fi,important
+
+! flashscore.fi
+www.flashscore.fi##div#header__block--user-menu
 
 ! Foreca.fi
 www.foreca.fi##a.category:upward(section)
 www.foreca.fi##div#share
 www.foreca.fi##h2:has-text(MTV Sää):upward(div)
 www.foreca.fi##p:has-text(Katsomasi)
+www.foreca.fi##div.toplist
+www.foreca.fi##h2:has-text(Luetuimmat sääuutiset)
+www.foreca.fi##div>a.blue[href="/meteorologilta"]:has-text(Kaikki artikkelit)
+www.foreca.fi##div.heading > h2:has-text(Foreca YouTubessa):upward(1)
+www.foreca.fi##div>div>div>a[href*="youtube.com"]:upward(.video.wide)
 
 ||cache.foreca.net/static/i/*$domain=foreca.fi,important
 ||cmp.quantcast.com^$domain=foreca.fi,important
 ||quantcast.mgr.consensu.org^$domain=foreca.fi,important
 ||www.foreca.fi/img/mtv3saa.jpg$important
+||www.foreca.fi/img/youtube/youtube-*.jpg$image
 ||www.foreca.fi/lv$1p,important
 ||www.foreca.fi/ml$1p,important
 ||www.foreca.fi/responsive-upgrade/dist/newscarousel*$1p,important
 
 ! Forssanlehti.fi
 www.forssanlehti.fi##aside.diks-column
+
+! golf.fi
+golf.fi##div.header>.topbar
+
+||golf.fi/wp-content/uploads/*/*/*-blue2.svg$image
+
+! hinta.fi
+hinta.fi##.hv--social
 
 ! hs.fi
 www.hs.fi##.ab-test-nav-login-button
@@ -215,11 +397,48 @@ www.hs.fi##p.article-body>span:has-text(Video näyttää):upward(p)
 www.hs.fi##section.rplayer-container
 www.hs.fi##section.sticky-header.fixed>div>div>a:style(padding-top: 6px)
 www.hs.fi##span:has-text(Lähetä uutiskuva):upward(5)
+www.hs.fi##div.video-container:upward(2)
+www.hs.fi##div:matches-attr(id="/uutiskirje/")
+www.hs.fi##div.mb-8:has-text(Lehti luettavissa näköislehtenä):upward(4)
+www.hs.fi##article>a.block>section>p:has-text(Tilaajana luet):upward(4)
 
 ||sf.nm-ovp.nelonenmedia.fi/player/stable/*$script,domain=hs.fi,important
 ||sf.nm-ovp.nelonenmedia.fi/player/stable/ruutu-player.js$script,domain=hs.fi,important
 ||www.hs.fi/api/commenting/hs/articles/*$xhr,1p,important
 ||www.hs.fi/api/pe/v2/listitems/diamondticker/*$xhr,1p,important
+
+! ilkkapohjalainen.fi
+ilkkapohjalainen.fi##div#breaking-news-container>div>div>div>a>i.ri-star-fill:upward(a)
+ilkkapohjalainen.fi##header#header>div>div>div>ul:upward(div)
+ilkkapohjalainen.fi##hr
+ilkkapohjalainen.fi##h3:has-text(Tilaa Ilkka-Pohjalaisen uutiskirje):upward(3)
+ilkkapohjalainen.fi##div[data-placement-id^="paraatipaikka"]:upward(2)
+ilkkapohjalainen.fi##ul>li>a[aria-label]:matches-attr(href="/.com/[iI]/"):upward(div)
+ilkkapohjalainen.fi##nav>ul>li>a[href*="tilaa"]:upward(li)
+ilkkapohjalainen.fi##div:matches-attr(class="/dropdown-menu/")>ul>li>a[href]:upward(li)
+ilkkapohjalainen.fi##div:matches-attr(class="/dropdown-menu/")>ul>li>a:has-text(Yhteistyö):upward(li)
+ilkkapohjalainen.fi##ul>li>a:has-text(Osallistu):upward(li)
+ilkkapohjalainen.fi##div>div:matches-attr(class="/card-image-type/")>div>div>div>i.ri-star-fill:upward(5)
+ilkkapohjalainen.fi###breaking-news-container
+ilkkapohjalainen.fi##i.ri-bookmark-line:upward(button)
+ilkkapohjalainen.fi##.pointti-ad
+ilkkapohjalainen.fi##.tag-container
+ilkkapohjalainen.fi##.social-share-wapper
+ilkkapohjalainen.fi##div.item>div>div>div>div>div>div>i.ri-star-fill:upward(7)
+ilkkapohjalainen.fi##div[data-infinite-scroll]:matches-css(height: 80px)
+ilkkapohjalainen.fi##div#readpeak-tag:upward(1)
+ilkkapohjalainen.fi##div>button[aria-label="Kirjaudu sisään"]:upward(li)
+ilkkapohjalainen.fi##div#container>div>div>div>div>div>:matches-css(height: 50px)
+
+||ilkkapohjalainen.fi/api/v*/collections/luetuimmat-ilkka-pohjalainen$important
+||ilkkapohjalainen.fi/api/v*/breaking-news$important
+||integration.imediat.fiareads.com/read_pointti_widget_data.php$important
+||ilkkapohjalainen.fi/tulo/isLoggedIn$important
+||ilkkapohjalainen.fi/checkWhiteListedIP$important
+||ilkkapohjalainen.fi/tulo/checkAnonSession$important
+||ilkkapohjalainen.fi/assetify/google-play-badge.png$image
+||ilkkapohjalainen.fi/assetify/app-store-badge.png$image
+||nyt.tassa.fi/ctxwidget/tassaCtxWidget.js$important
 
 ! Ilmatieteenlaitos.fi
 ||www.ilmatieteenlaitos.fi/spaces/*$important
@@ -284,6 +503,22 @@ www.iltalehti.fi##svg.iltalehti-svg-logo:style(padding-top:10px)
 ||weather.il.fi^$important
 ||www.iltalehti.fi/assets/KauppalehtiEmbed.*.chunk.js$1p,important
 ||www.iltalehti.fi/assets/TalentEmbed.*.chunk.js$script,1p,important
+
+! iltapulu.fi
+www.iltapulu.fi###newsboxes-wrapper
+www.iltapulu.fi##div.footer-links>a[href*="/iltapulu"]:upward(div)
+www.iltapulu.fi##.footer-recommendations.footer-links
+www.iltapulu.fi##.hide-md:upward(div)
+
+||ap-cdn.sanomagames.com/isfi-embeddings/*$subdocument,important
+||www.iltapulu.fi/static/js/cookie.js$script,1p,important
+||ap-cdn.sanomagames.com/vauva-feed-box/*$subdocument,important
+||www.iltapulu.fi/static/js/jquery.iframetracker.min.js$script,important
+||www.is.fi/promo/?content=promobox$subdocument,important
+||ap-cdn.sanomagames.com/10k-promo/*$subdocument,important
+||kampanjat.is.fi/alennuskoodit-promo/*$subdocument,important
+||www.iltapulu.fi/static/js/jquery.ui.touch-punch.min.js$script,important
+||www.iltapulu.fi/static/img/style/icons/user.svg$image
 
 ! io-tech.fi
 bbs.io-tech.fi##div.xb-page-wrapper.xb-canvas-menuActive > div:style(border-bottom: 0px solid transparent !important;)
@@ -364,6 +599,25 @@ www.jimms.fi##h2:has-text(Suosittelemme):style(padding-top:5px)
 ||www.jimms.fi/Content/Images/megamenu/*$image
 ||www.jimms.fi/Content/ShopinShops/*$image
 
+! kalajokiseutu.fi
+www.kalajokiseutu.fi##div>div>a#nav-login-subscribe
+www.kalajokiseutu.fi##div>div>div#nav-anon
+www.kalajokiseutu.fi##.ticker--yellow.ticker > [href*="/tilaus/"]:upward(section)
+www.kalajokiseutu.fi##div#ew-most-read-google-analytics-2:upward(div)
+www.kalajokiseutu.fi##div>section>header>h2>a:has-text(Tuoreimmat):upward(5)
+www.kalajokiseutu.fi##.pohjanmaa.ew-section-header.widget:upward(.row)
+www.kalajokiseutu.fi##section>header>h2>a[href*="/mainos"]:upward(.row)
+www.kalajokiseutu.fi##div.row.align-items-stretch.internal-ads
+www.kalajokiseutu.fi##.social-links
+www.kalajokiseutu.fi##ul>li>a.nav-link[href*="/uutisvinkki"]:upward(li)
+
+||deals.innocode.no/api/public/v*/widgets/*$subdocument
+||static.ew.hil.infomaker.io/wp-content/uploads/sites/*/*/*/*/*$image
+||www.regionline.fi/banner/*$subdocument,important
+||www.tapahtumienkeskipohjanmaa.fi/widget/*$xhr,important
+||www.tapahtumienkeskipohjanmaa.fi/widget-loader/*$important
+||deals.innocode.no/assets/widget-init.js$important
+
 ! Kaleva.fi
 www.kaleva.fi##.m-contentListItem__subscriberText:has-text(Tilaajille):upward(.-article)
 www.kaleva.fi##.m-contentListItemThumb__subscriberText:has-text(Tilaajille):upward(.m-contentListItemThumb)
@@ -430,6 +684,21 @@ www.kauppalehti.fi##span.text:has-text(Kirjaudu):upward(button[type="button"])
 ! Kotikokki.net
 www.kotikokki.net##.uutiskirje-box
 
+! maaseuduntulevaisuus.fi
+www.maaseuduntulevaisuus.fi##a#cta-header-tilaa:upward(1)
+www.maaseuduntulevaisuus.fi##.Header_loginArea__is9le
+www.maaseuduntulevaisuus.fi##div>div>div>h2:has-text(Luetuimmat):upward(aside)
+www.maaseuduntulevaisuus.fi##div>div>div>span:has-text(Tilaajalle):upward(7)
+www.maaseuduntulevaisuus.fi##div>button>span:has-text(Jaa artikkeli):upward(3)
+www.maaseuduntulevaisuus.fi##div>div>div>h2:has-text(Osaston luetuimmat):upward(aside#aside)
+www.maaseuduntulevaisuus.fi##footer>div>div>div>div>div>span:has-text(Seuraa):upward(2)
+www.maaseuduntulevaisuus.fi###keskustelu
+www.maaseuduntulevaisuus.fi##div:matches-attr(class=/ArticleTags/):upward(1)
+www.maaseuduntulevaisuus.fi##:matches-path(/uutiset)div:matches-attr(class=" "):upward(2)
+www.maaseuduntulevaisuus.fi##main#main:style(padding-bottom: 0px !important;)
+www.maaseuduntulevaisuus.fi##footer>div>div>div>div>div>div:has-text(Mediamyynti):upward(1)
+www.maaseuduntulevaisuus.fi##div:matches-attr(class="/adElement/"):upward(2)
+
 ! Mikrobitti.fi
 www.mikrobitti.fi##.lazyload-wrapper:style(margin-bottom: 15px)
 www.mikrobitti.fi###skyscraper-height-div:style(padding-bottom: 0px !important;)
@@ -482,6 +751,15 @@ www.mikrobitti.fi##title:has-text(Tilaajille):upward(a)
 
 ||www.mikrobitti.fi/api/feed/v2/teaser/partnercontent/*$important
 
+! moontv.fi
+moontv.fi###facebook
+moontv.fi###twitter
+moontv.fi###youtube
+moontv.fi###twitch
+moontv.fi###login
+moontv.fi##.widejako
+moontv.fi##.saic-wrapper
+
 ! MTVuutiset.fi
 www.mtvuutiset.fi##.article-authors2.article-author
 www.mtvuutiset.fi##.column100 .promo-flex-block-100 .promo-group:style(margin-bottom: 0px !important;)
@@ -518,6 +796,18 @@ www.mtvuutiset.fi##ul.news-feed-listing:upward(div.component-sonia-leiki)
 www.oulunseurakunnat.fi##.is-active.site-overlay
 www.oulunseurakunnat.fi##body.has-active-overlay:style(overflow-y: scroll !important;)
 
+! pelaaja.fi
+pelaaja.fi##header>div>div>div.navbar-icon-list
+pelaaja.fi##.magazine-promo-box-right-top:upward(.panel-pane)
+pelaaja.fi##.pane-polls
+pelaaja.fi##.block-follow-social-media:upward(1)
+pelaaja.fi##.newsletter-side-banner
+pelaaja.fi##div>span>h2:has-text(Seuraa!):upward(div)
+pelaaja.fi##.container-fluid.footer
+pelaaja.fi##.fa-user.fa:upward(li)
+
+||pelaaja.fi/sites/all/themes/pelaajaretro2016/img/pe-newsletter-bg.png$image
+
 ! Radioplay.fi
 radioplay.fi##:matches-path(/kanavat)main>div>h2:has-text(Kaikki kanavat)
 radioplay.fi###podcasts>h2:has-text(Suositellut podcastit):upward(div)
@@ -553,11 +843,48 @@ www.seiska.fi##div[data-testid="video-widget"]
 
 ||www.seiska.fi/api/most-popular$1p,important
 
+! soppa365.fi
+www.soppa365.fi##div>a:has-text(Tilaa)
+www.soppa365.fi##div>div>a.LoginLink
+www.soppa365.fi##div.group-social-media
+www.soppa365.fi##div>div[title="Tallenna"]
+
+! suomenkuvalehti.fi
+suomenkuvalehti.fi##div>a[title="Tilaa Suomen Kuvalehti"]
+suomenkuvalehti.fi##.login-button
+suomenkuvalehti.fi##.news-letter
+suomenkuvalehti.fi##.offer
+suomenkuvalehti.fi##.order-button
+suomenkuvalehti.fi##.social-media-icons
+
+! suomi24.fi
+www.suomi24.fi##div:matches-attr(class="/AdRow/")
+www.suomi24.fi##div:matches-attr(class="/Partners/"):upward(2)
+keskustelu.suomi24.fi##div:matches-attr(class="/Stara/")
+
 ! Talouselämä.fi
 www.talouselama.fi##button:has-text(Tilaa TE):upward(div)
 www.talouselama.fi##div>div>div>div>div>span:has-text(Tilaajille:):upward(5)
 www.talouselama.fi##hr
 www.talouselama.fi##ul:has(a:has-text(Talouselämä Nyt)):style(border-right: 0px solid transparent !important; padding-right: 0px !important;)
+
+! tanssiin.fi
+www.tanssiin.fi###wonderplugincarousel-container-1
+www.tanssiin.fi##.jp-relatedposts
+www.tanssiin.fi###mvp-related-posts
+www.tanssiin.fi###mvp-comments-button
+www.tanssiin.fi##+js(aeld, scroll)
+www.tanssiin.fi###mvp-main-body-wrap:style(padding-bottom: 0px !important;)
+www.tanssiin.fi##strong:has-text(Lue myös:):upward(p)
+www.tanssiin.fi##ul>li.mvp-feat-col-tab.active:upward(6)
+www.tanssiin.fi##.mvp-widget-home:style(margin-top: 20px !important;)
+www.tanssiin.fi##.widget_top-posts
+www.tanssiin.fi##.widget_recent_entries
+www.tanssiin.fi##.widget_tag_cloud
+
+||www.tanssiin.fi/wp-content/plugins/wonderplugin-carousel/*$important
+||www.tanssiin.fi/wp-content/plugins/easy-affiliate-links/*$important
+||cse.google.com/cse.js$domain=tanssiin.fi,important
 
 ! Tekniikanmaailma.fi
 tekniikanmaailma.fi##.MagShortCut_mag-shortcut:upward(div.PaginatingList_x-large-col)
@@ -591,6 +918,8 @@ www.tekniikkatalous.fi##title:has-text(Tilaajille):upward(a)
 ||www.tekniikkatalous.fi/att-public-api/pricelists/front-end-price-list/*$1p,important
 ||www.tekniikkatalous.fi/company-api/products$1p,important
 
+! tilannehuone.fi
+www.tilannehuone.fi##[href*="http://www.facebook.com/pages/Tilannehuone/"]
 
 ! Tivi.fi
 www.tivi.fi##a[aria-label="Facebook"]
@@ -642,6 +971,37 @@ www.tori.fi##div>a.inline-block[rel="nofollow noopener noreferrer"]
 ||autot.tori.fi/embed/*$subdocument,1p,important
 ||recommendations.asunnot.oikotie.fi^$subdocument,domain=tori.fi,important
 
+! ts.fi
+www.ts.fi##div>a:has-text(Tilaa)
+www.ts.fi###js-login
+www.ts.fi##div[data-v3-item]>div>div>div.article--tsplus
+www.ts.fi##div.tsv3-c-common-twocolumnslayout__row>div>div>div>div>div>div.article--tsplus:upward(2)
+www.ts.fi##.tsv3-c-common-twocolumnslayout__row__right
+www.ts.fi##.tsv3-c-common-article__socialmedia_dropdown.js-somedropdown
+www.ts.fi##:matches-path(//uutiset/\d/).tsv3-c-common-twocolumnslayout__row__left:upward(3)
+
+! uusisuomi.fi
+www.uusisuomi.fi##div>div>div>div>span:has-text(Tilaajille):upward(5)
+www.uusisuomi.fi##hr
+www.uusisuomi.fi##a[data-test="mainTeaser"]
+www.uusisuomi.fi##a[data-test="teaser"]>div>div>div>span:has-text(Tilaajille):upward(5)
+www.uusisuomi.fi##a[data-test="mainTeaserColumn"]>div>div>div>span:has-text(Tilaajille):upward(a)
+www.uusisuomi.fi##a[data-test="teaser"]
+www.uusisuomi.fi##section[data-test="tabs"]
+www.uusisuomi.fi##aside>div>a[href="/tilaajille"]:upward(1)
+www.uusisuomi.fi##aside[data-test="mostRead"]
+www.uusisuomi.fi##main>div.lazyload-wrapper
+www.uusisuomi.fi##header>div>button>a
+www.uusisuomi.fi##header>div>button[aria-label="Kirjaudu"]
+www.uusisuomi.fi##nav>div>a[href*=".com"]
+www.uusisuomi.fi##nav>ul>li>a[href*="kumppanisisallot"]
+www.uusisuomi.fi##div#article-content>div>a[href*="mailto:?"]:upward(1)
+
+||app-conf.almamedia.net/v3/conf.json$xhr,important
+
+! Vauva.fi
+||www.vauva.fi/embed/discussions/*$xhr,important
+
 ! Verkkokauppa.com
 www.verkkokauppa.com##a.pixel
 www.verkkokauppa.com##a[href*="/fi/catalog/"]:upward(.hXMSiL)
@@ -653,6 +1013,29 @@ www.verkkokauppa.com##h2:has-text(trendaavia):upward(.hXMSiL)
 
 ! Verkkouutiset.fi
 www.verkkouutiset.fi##a[href*="/mainoskauppa"]:upward(li)
+
+! voice.fi
+www.voice.fi##.follow-on-fb
+www.voice.fi##.most-popular-right-column
+www.voice.fi##section>h3:has-text(Uusimmat):upward(section)
+www.voice.fi##.sbsads
+www.voice.fi##.social-container
+www.voice.fi##.tiktok-embed
+www.voice.fi##div.competitions:upward(1)
+www.voice.fi##.instagram.embed
+www.voice.fi##nav>a.nav-item[href="/kilpailut"]
+www.voice.fi##.article-tags
+
+||embed.podplay.com^$subdocument,domain=voice.fi,important
+||www.voice.fi/addons/flowplayer/*.js$script,important
+||www.voice.fi/templates/global/scripts/base.js$script,1p,important
+
+! vr.fi
+www.vr.fi##button[data-testid="login-link"]:upward(dd)
+www.vr.fi##footer>div>div>div>a:upward(2)
+www.vr.fi##div>ul>li>a[aria-label][href*=".com/"]:upward(div)
+
+||www.vr.fi/images/svg/icons/*.svg$image
 
 ! yle.fi
 yle.fi##.app-promotion-container
@@ -675,9 +1058,8 @@ yle.fi##div>button[aria-label="Näytä kaikki aiheet"]:upward(2)
 yle.fi##.yle__article__footer
 yle.fi##div>div>div>div>span:has-text(Keskustele)
 
-
 ||tag-manager.yle.fi/ylefi-production.js$1p,important
-||login.api.yle.fi/v1/user/login$1p,important
+||login.api.yle.fi/v1/user/login$1p,$redirect=noop.js,important
 ||images.cdn.yle.fi/image/upload/login-banner-bgr.png$image
 
 areena.yle.fi##.list-notification
