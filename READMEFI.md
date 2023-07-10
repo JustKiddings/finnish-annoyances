@@ -1,4 +1,4 @@
-# Finnish Annoyances
+# Finnish Annoyances 🇫🇮
 Finnish Annoyances eli Suomi ärsykkeet on lista, joka yrittää piilottaa turhat elementit ja estää tarpeettomat yhteydet. </br>
 Listan avulla saat monilla sivuilla puhtaamman lopputuloksen.
 
