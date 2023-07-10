@@ -1,11 +1,13 @@
-# Finnish Annoyances
+# Finnish Annoyances 🇫🇮
+> Suomeksi [täältä.](https://github.com/Axonym/finnish-annoyances/blob/main/READMEFI.md)
+
 Finnish Annoyances is a list which hides all unnecessary elements and blocks unnecessary connections. </br>
 By using Finnish Annoyances you will get a cleaner look in many websites.
 
 The list is still under development but at the moment it covers most visited finnish websites.
 
 ## To-Do
-- [ ] README.md in finnish
+- [x] README.md in finnish
 - [ ] Cover more websites
 - [ ] Make specific lists
 
