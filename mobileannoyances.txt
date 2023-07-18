@@ -1,0 +1,69 @@
+! Title: Finnish Mobile Annoyances
+! Description: Finnish Mobile Annoyances List
+! Homepage: https://github.com/axonym/finnish-annoyances
+! License: https://unlicense.org
+! Report issues at / Ilmoita ongelmista täällä: 
+! https://github.com/axonym/finnish-annoyances/issues
+
+! Network Filters
+||cdn.privacy-mgmt.com^$script,domain=cdn.privacy-mgmt.com,important
+||www.hs.fi/promo/?source=*&content=promobox$important
+||www.vauva.fi/embed/discussions/*$xhr,important
+
+! Network Filters End
+
+! Website specific filters
+
+! is.fi
+www.is.fi##.lg\:hidden > .html-lane-item
+www.is.fi##div.weather-widget-container:upward(1)
+www.is.fi##span:has-text(Lähetä meille video!):upward(article)
+www.is.fi##div>article>a[href*="is.fi/audio"]:upward(div)
+www.is.fi##div>article.list
+www.is.fi##.teaser__spacing-bottom:style(margin-bottom: 0px !important;)
+www.is.fi##.toast__background--app-marketing.toast--modal-open.toast
+www.is.fi##div.header__container--link>a.ab-test-nav-login-button
+www.is.fi##span.article-strong:has-text(Lue lisää:):upward(p)
+www.is.fi##.tags
+www.is.fi##.related-articles
+www.is.fi##.ab-test-before-article-mobile.article-actions__mobile-buttons
+www.is.fi##.comments:upward(1)
+www.is.fi##.ab-test-article-tail-actions-bottom.article-tail-actions--bottom.article-actions
+www.is.fi##.article:style(padding-bottom: 0px !important;)
+www.is.fi##section.fixed.sticky-header
+www.is.fi##section.m-auto>div>div>a:upward(section)
+
+||embed.sanoma-sndp.fi/ext/embed/*$subdocument,domain=is.fi,important
+||sn.sanoma.fi/js/*$subdocument,domain=is.fi,important
+||edge.adobedc.net/ee/irl1/v*/privacy/set-consent$xhr,domain=is.fi,important
+||www.is.fi/api/commenting/is/*$xhr,1p,important
+||ap-cdn.sanomagames.com/isfi-embeddings/*$subdocument,important
+||widgets.playpilot.com/collection/*$subdocument,important
+||playpilot-widgets.b-cdn.net^$subdocument,important
+||www-hs-fi.prod.sanoma-sndp.fi^$subdocument,important
+||kampanjat.is.fi^$subdocument,important
+||vg.is.fi^$subdocument,1p,important
+||tili.sanoma.fi/session-test$subdocument,important
+
+! yle.fi
+yle.fi##button[aria-label="Jaa ohjelma"]
+yle.fi##.yle-header-action-tunnus.yle-header-action
+yle.fi##div[role="list"]>div:matches-attr(class="/GridSystem__GridCell/"):style(margin: 0px -8px -8px !important;)
+yle.fi##div#main-bottom>div:matches-attr(class="/GridSystem__GridCell/"):style(margin: 0px -8px 0px !important;)
+yle.fi##span:matches-attr(class="/StoryCommentsCount__Comments/")
+yle.fi##a[href*="yle.onelink.me"]:has-text(Avaa Yle-sovelluksessa)
+yle.fi##a[href*="isWebBookmark"]:upward(div)
+yle.fi##footer.yle__article__footer
+yle.fi##section[aria-label="Suosittelemme sinulle"]
+yle.fi##div:matches-attr(class="/AppPromotion__PromotionContainer/")
+yle.fi###yle-comments-plugin
+yle.fi##.yle__article__emphasis:has-text(Voit keskustella):upward(p)
+yle.fi##div:matches-attr(class="/Decoration__FooterContainer/"):style(margin-top: 0px !important;)
+yle.fi##aside[aria-labelledby="newsday-heading"]:style(border-bottom: 0px !important;)
+yle.fi###global-header-container .yle-header-actions:style(margin-right: 0px !important;)
+yle.fi##.yle-header-search-input:style(border-left: 0px solid transparent !important;)
+yle.fi##div[data-analytics-headline-link]:has(h3:has-text(Olitko paikalla?)):upward(1)
+
+||tag-manager.yle.fi/ylefi-production.js$script,1p,important
+||locations.api.yle.fi/v*/address/current$xhr,1p,important
+
