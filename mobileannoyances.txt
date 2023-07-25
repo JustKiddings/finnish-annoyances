@@ -5,10 +5,17 @@
 ! Report issues at / Ilmoita ongelmista täällä: 
 ! https://github.com/axonym/finnish-annoyances/issues
 
+! Generic Filters
+*##.iltalehti-uutisboksi
+
+! Generic Filters End
+
 ! Network Filters
 ||cdn.privacy-mgmt.com^$script,domain=cdn.privacy-mgmt.com,important
 ||www.hs.fi/promo/?source=*&content=promobox$important
 ||www.vauva.fi/embed/discussions/*$xhr,important
+||api.il.fi/v*/articles/*$domain=kauppalehti.fi|talouselama.fi|arvopaperi.fi|etuovi.fi|vuokraovi.com|tivi.fi|mikrobitti.fi|tekniikkatalous.fi|uutissuomi.fi,important
+||jobly.almamedia.fi/nostobannerit/*$important
 
 ! Network Filters End
 
@@ -32,6 +39,8 @@ www.is.fi##.ab-test-article-tail-actions-bottom.article-tail-actions--bottom.art
 www.is.fi##.article:style(padding-bottom: 0px !important;)
 www.is.fi##section.fixed.sticky-header
 www.is.fi##section.m-auto>div>div>a:upward(section)
+www.is.fi##div>div>h2>span:has-text(Testaa):upward(article)
+www.is.fi##div.iframe-container.relative:upward(1)
 
 ||embed.sanoma-sndp.fi/ext/embed/*$subdocument,domain=is.fi,important
 ||sn.sanoma.fi/js/*$subdocument,domain=is.fi,important
@@ -44,6 +53,35 @@ www.is.fi##section.m-auto>div>div>a:upward(section)
 ||kampanjat.is.fi^$subdocument,important
 ||vg.is.fi^$subdocument,1p,important
 ||tili.sanoma.fi/session-test$subdocument,important
+
+! mikrobitti.fi
+www.mikrobitti.fi###talent-header
+www.mikrobitti.fi##div[aria-label="Kirjaudu"]:upward(1)
+www.mikrobitti.fi##div[style]>div>div:has(a[aria-label="Etusivu"]):style(padding-top: 0px !important;)
+www.mikrobitti.fi##div>span:has-text(Tilaajille:):upward(3)
+www.mikrobitti.fi##div>a[href="/testit"]:upward(.lazyload-wrapper)
+www.mikrobitti.fi##.alma-footer
+www.mikrobitti.fi##aside
+www.mikrobitti.fi##a[data-test="mainTeaser"]>div>div>span:has-text(Tilaajille):upward(3)
+www.mikrobitti.fi##div>a:has(title:has-text(Tilaajille))
+www.mikrobitti.fi##section>a:has(title:has-text(Tilaajille))
+www.mikrobitti.fi##div>a[data-test="mainTeaser"]:style(border-bottom: 0px solid transparent !important;)
+www.mikrobitti.fi##section>div>a[href*="testasimme"]
+www.mikrobitti.fi##section>div>a[href*="vertailussa"]
+www.mikrobitti.fi##section>div:style(border-top: 0px solid transparent !important;)
+www.mikrobitti.fi##section>a:style(border-top: 0px solid transparent !important;)
+www.mikrobitti.fi##hr
+www.mikrobitti.fi##:matches-path(/^/$/)section>div:not(.lazyload-wrapper):has(a:matches-css(display: none))
+www.mikrobitti.fi##:matches-path(/aiheet/)section>div>div>a[href*="testasimme"]
+www.mikrobitti.fi##section>div>a:style(border-top: 0px solid transparent !important;)
+www.mikrobitti.fi##section>div>div:style(border-top: 0px solid transparent !important;)
+www.mikrobitti.fi##:matches-path(/^/$/)section>div>div>div>div>a:style(border-bottom: 0px solid transparent !important;)
+www.mikrobitti.fi##nav>ul>li:has([href="/neuvot"])
+www.mikrobitti.fi##nav>ul>li:has([href*="uutiskirje"])
+
+||data.richie.app/editions-eu-images/issue/f/*/*/issue_*_issue/master_preview_master_cover.png$image
+||data.richie.app/editions-eu-images/issue/*/issue_*_issue/master_preview_master_cover.png?mode=stretch&width=3*7&height=40*&format=jpeg$image
+||assets.tunnus.almamedia.fi/cookies/*$subdocument,domain=www.mikrobitti.fi,important
 
 ! yle.fi
 yle.fi##button[aria-label="Jaa ohjelma"]
@@ -63,7 +101,17 @@ yle.fi##aside[aria-labelledby="newsday-heading"]:style(border-bottom: 0px !impor
 yle.fi###global-header-container .yle-header-actions:style(margin-right: 0px !important;)
 yle.fi##.yle-header-search-input:style(border-left: 0px solid transparent !important;)
 yle.fi##div[data-analytics-headline-link]:has(h3:has-text(Olitko paikalla?)):upward(1)
+yle.fi##section:matches-attr(class=/Carousel__Container/)
+yle.fi##p.yle__article__paragraph:has-text(uutisvinkki)
+yle.fi##p.yle__article__paragraph:has-text(Areenassa)
+yle.fi##:matches-path(/a/)figure:has-text(Audio)
+yle.fi##p.yle__article__paragraph:has-text(Tästä linkistä voit kuunnella)
+yle.fi##p.yle__article__paragraph:has(:has-text(Lisää)a[href])
+yle.fi##h3:has-text(Lähetä uutiskuva):upward(div[data-analytics-headline-link])
+yle.fi##div:matches-attr(class="/Group__Container/"):has(h3:has-text(jutut talteen))
+yle.fi##div:not(:matches-attr(class="/Card__Container/"))>div:matches-attr(class="/GridSystem__GridCell/"):has([href*="areena.yle.fi"])
 
+||images.cdn.yle.fi/image/upload/w_*,ar_1.7777777777777777*,c_fill,g_faces/q_auto:eco,f_auto,fl_lossy/*/$image
 ||tag-manager.yle.fi/ylefi-production.js$script,1p,important
 ||locations.api.yle.fi/v*/address/current$xhr,1p,important
-
+||yle-recommender-front.api.yle.fi/v3/recommendations/*$xhr,important
