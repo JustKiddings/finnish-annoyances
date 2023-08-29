@@ -50,8 +50,6 @@ alueviesti.fi,aksa.fi,bittiraha.fi,caravan-lehti.fi###comments
 alueviesti.fi,aksa.fi,bittiraha.fi,caravan-lehti.fi##.comments-area
 caravan-lehti.fi##.comments-link
 
-
-
 ! Generic Filters End
 
 ! Generic URL Params
