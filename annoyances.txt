@@ -11,8 +11,6 @@
 ! Unbreak End
 
 ! Generic filters
-*###comments
-*##.comments-area
 *##.alma-footer
 *##.diks-box__image-wrapper
 *##.diks-footer__bottom-row
@@ -41,11 +39,18 @@
 *##a[href="#kommentit"]:upward(div)
 *##.diks-display-ad
 *##.fa.fa-user
-alibi.fi##div:matches-attr(class="/tags/")
-eralehti.fi##div:matches-attr(class="/keywords/")
 *##div:matches-attr(class="/avainsanat/")
 *##div:matches-attr(class="/jakonappulat/")
+
 !*##div:matches-attr(class="/tag-c/")
+
+alibi.fi,is.fi##div:matches-attr(class="/tags/")
+eralehti.fi##div:matches-attr(class="/keywords/")
+alueviesti.fi,aksa.fi,bittiraha.fi,caravan-lehti.fi###comments
+alueviesti.fi,aksa.fi,bittiraha.fi,caravan-lehti.fi##.comments-area
+caravan-lehti.fi##.comments-link
+
+
 
 ! Generic Filters End
 
@@ -55,7 +60,7 @@ eralehti.fi##div:matches-attr(class="/keywords/")
 *$removeparam=utm_medium
 *$removeparam=utm_source
 *$removeparam=/^ref=/
-*$removeparam=source
+!*$removeparam=source
 ! Generic URL Params Remove End
 
 ! Network Filters
@@ -134,6 +139,16 @@ alueviesti.fi##li > .nav-link:has-text(Kaupallinen yhteistyö)
 alueviesti.fi##.login-button
 alueviesti.fi###after_article
 alueviesti.fi###front_content_1_aside
+alueviesti.fi##.adv-link:upward(.widget)
+alueviesti.fi##span[title]>a
+alueviesti.fi##ul#recentcomments:upward(div)
+alueviesti.fi##div:matches-attr(id=/recent-posts/)
+alueviesti.fi###front_content_wrap:style(box-shadow: 0 0 0rem rgba(0, 0, 0, 0) !important;)
+alueviesti.fi##li:matches-attr(id=/menu-item/) > a:has-text(/mainonta/)
+alueviesti.fi##li:matches-attr(id=/menu-item/) > a:has-text(/aupallinen/)
+
+||alueviesti.fi/files/202*banner*.jpg$image
+||connect.facebook.net^$domain=alueviesti.fi,important
 
 ! Anna.fi
 anna.fi##.contactus__newsletter
@@ -171,7 +186,10 @@ alibi.fi##.rssfeed-5.rssfeed.sidebar-block.omwidget
 alibi.fi##a.footer-button:has-text(Tilaa lehti)
 alibi.fi##.share-tools
 alibi.fi###verkkopalvelut
+alibi.fi##.links > [href="mailto:alibi@pressimiehet.fi"]
+alibi.fi##.links a:style(padding: 0px !important;)
 
+||alibi.fi/wp-content/plugins/gdpr-cookie-compliance/*$important
 ||feed-api.vik.fi/v*/public/*$important
 
 ! apteekkari.fi
@@ -213,12 +231,18 @@ www.arvopaperi.fi##:matches-path(/uutiset)section>div>a:has-text(Lisää aiheest
 www.arvopaperi.fi##footer>ul>li>div>a[href*="twitter.com/@"]
 www.arvopaperi.fi##aside:has(h3:has-text(LUE MYÖS))
 
+||www.arvopaperi.fi/api/feed/*/teaser/partnercontent/*$important
+||www.arvopaperi.fi/api/user/*$important
+
 ! autotalli.com
 www.autotalli.com##.marketplaceHeader
 www.autotalli.com##div#wrapper4:style(margin-top: 81px !important;)
+www.autotalli.com##.nettixBannersContainer
+www.autotalli.com###carParkBannerTwoPanel
 
 ||www.autotalli.com/js/common/google-analytics*.js$important
 ||www.autotalli.com/js/common/jquery.cookie-*.js$important
+||cdn.almaajo.fi/live/asset/nettix/banner/*_banner.gif$image
 
 ! bittiraha.fi
 bittiraha.fi##footer.text-left.entry-meta
@@ -227,6 +251,7 @@ bittiraha.fi##div.wp-block-buttons>div.wp-block-button>a.wp-block-button__link[h
 bittiraha.fi##hr.has-alpha-channel-opacity.wp-block-separator
 bittiraha.fi##[href="https://app.coinmotion.com/fi/register/signup"] > strong:upward(p)
 bittiraha.fi##blockquote.wp-block-quote
+bittiraha.fi##.text-center.blog-share
 
 ||coinmotion.com/af-br-side$image
 ||smushcdn.com/*/wp-content/uploads/*/*/bittimaatti_gif_banner.gif*$image
@@ -236,6 +261,7 @@ blogbook.fi###front-welcome
 blogbook.fi##.mailchimp.text-center.sidebar-block
 blogbook.fi##.widget.sidebar-block
 blogbook.fi###topfooter
+blogbook.fi##.right > li > a
 
 ! blogit.fi
 www.blogit.fi##.box_telsu
@@ -340,8 +366,12 @@ www.etuovi.com###uutiskirje
 www.etuovi.com##h2:has-text(Anna asiantuntijan myydä):upward(6)
 
 ! findance.com
+www.findance.com##.latest
 www.findance.com##body:style(margin: 0)
 www.findance.com##footer>div>ul>li>div>p>a>i:matches-attr(class=/fa-[fi]/)
+
+||sdk.snapkit.com^$domain=findance.com,important
+||widget.high.fi/loadRecommendations.js$domain=findance.com,important
 
 ! finnkino.fi
 www.finnkino.fi##div>p>a[href*=".com/"]:upward(div)
@@ -441,6 +471,7 @@ www.hs.fi##.article-strong:has-text(Lue lisää:):upward(p)
 ||sf.nm-ovp.nelonenmedia.fi/player/stable/ruutu-player.js$script,domain=hs.fi,important
 ||www.hs.fi/api/commenting/hs/articles/*$xhr,1p,important
 ||www.hs.fi/api/pe/v2/listitems/diamondticker/*$xhr,1p,important
+||porssi.iltasanomat.fi/api/stockTicker$domain=hs.fi,important
 
 ! ilkkapohjalainen.fi
 ilkkapohjalainen.fi##div#breaking-news-container>div>div>div>a>i.ri-star-fill:upward(a)
@@ -486,6 +517,7 @@ www.iltalehti.fi##.article-content > .related-articles
 www.iltalehti.fi##.article-list-tabs:upward(div.card)
 www.iltalehti.fi##.card:style(margin-bottom: 0px !important;)
 www.iltalehti.fi##.coral-talk-spinner-container:upward(.card)
+www.iltalehti.fi##.front-banner-embed
 www.iltalehti.fi##.footer-wrapper
 www.iltalehti.fi##.il-footer-links > [href="/uutisvihje"]
 www.iltalehti.fi##.il-footer-links>[href="https://kampanjat.almamedia.fi/ilplus_digituki.html"]
@@ -496,6 +528,7 @@ www.iltalehti.fi##.lookalso
 www.iltalehti.fi##.menu-nav-content > div.nav-item > .item > a[href="/tallennetut"]:upward(2)
 www.iltalehti.fi##.menu-nav-content > div.nav-item > .item > a[href="/uutisvihje"]:upward(2)
 www.iltalehti.fi##.menu-nav-content>button:has-text(Kirjaudu sisään)
+www.iltalehti.fi##.newsletter-popup-elements
 www.iltalehti.fi##.newsticker-container
 www.iltalehti.fi##.other>.nav-item>.item>[href="/uutiskirje"]:upward(2)
 www.iltalehti.fi##.paragraph:style(margin:0 14px 12px !important;)
@@ -531,6 +564,7 @@ www.iltalehti.fi##svg.il-plus-svg-logo.inline:upward(a)
 www.iltalehti.fi##svg.iltalehti-svg-logo:style(padding-top:10px)
 
 ||almacrcommoncontent.net^$domain=iltalehti.fi,important
+||assets.ilcdn.fi/urheilu_10kys_banneri_matala.png$image
 ||assets.ilcdn.fi/4*$image
 ||assets.ilcdn.fi/i*$image
 ||assets.ilcdn.fi/nauha_iltv.gif$image
@@ -617,6 +651,7 @@ www.is.fi##span:has-text(sisältöä ei voida näyttää):upward(div.mb-24.mx-16
 ||vg.is.fi^$important
 ||www.is.fi/html-assets/snippets/mn-cover-640.jpg$image
 ||www.is.fi/html-assets/snippets/TV_lehti*488x488.png$image
+||www.is.fi/api/commenting/*$1p,important
 
 ! Jimms.fi
 www.jimms.fi##.fp-featured-brand:upward(1)
@@ -652,6 +687,10 @@ www.kalajokiseutu.fi##ul>li>a.nav-link[href*="/uutisvinkki"]:upward(li)
 ||www.tapahtumienkeskipohjanmaa.fi/widget/*$xhr,important
 ||www.tapahtumienkeskipohjanmaa.fi/widget-loader/*$important
 ||deals.innocode.no/assets/widget-init.js$important
+||connect.facebook.net^$domain=kalajokiseutu.fi,important
+||voiceintuitive-v3.z01.azurefd.net^$domain=kalajokiseutu.fi,important
+||keskipohjanmaa.ver5.eventz.today^$domain=kalajokiseutu.fi,important
+||static-content.hillagroup.fi/weather/*$domain=kalajokiseutu.fi,important
 
 ! kalamies.com
 kalamies.com##a[href*="facebook.com/"]:upward(.widget-column)
@@ -676,6 +715,7 @@ www.kansantahto.fi##a.elementor-item[href*=".fi/tilaa/"]:upward(li)
 www.kansantahto.fi##a[href*=".fi/tilaa"]:upward(section)
 www.kansantahto.fi##.elementor-shape-top.elementor-shape
 
+||connect.facebook.net^$domain=kansantahto.fi,important
 ||www.kansantahto.fi/wp-content/uploads/*/*/*kansi*.jpg$image
 
 ! Kärkkäinen.com
@@ -706,6 +746,7 @@ www.kauppalehti.fi##a[href="/porssi/sijoittajapaketti"]:upward(1)
 www.kauppalehti.fi##a[href="/tilaus/#/"]:upward(2)
 www.kauppalehti.fi##a>div>div>span:has-text(Tilaajille):upward(div[data-test="mainTeaser"])
 www.kauppalehti.fi##a>div>img:matches-css(display: none):upward(3)
+www.kauppalehti.fi##aside:has(h3:has-text(LUE MYÖS))
 www.kauppalehti.fi##aside[data-test="klNyt"]:upward(1)
 www.kauppalehti.fi##aside[data-test="mostRead"]
 www.kauppalehti.fi##aside>div>div>div>div>div>svg>defs>linearGradient[gradientUnits="userSpaceOnUse"]:upward(7)
@@ -737,6 +778,10 @@ www.kauppalehti.fi##p:has-text(Kauppalehti Digitilaus):upward(div[offset])
 www.kauppalehti.fi##section[data-test="tabs"]>ul>li:upward(2)
 www.kauppalehti.fi##span.text:has-text(Kirjaudu):upward(button[type="button"])
 
+||handshake.gravito.net/api/*$domain=kauppalehti.fi,important
+||assets.almatalent.fi/static/images/fantasyfundlogo.png$image
+||www.kauppalehti.fi/api/external/training/*$1p,important
+
 ! Kotikokki.net
 www.kotikokki.net##.uutiskirje-box
 
@@ -754,6 +799,10 @@ www.maaseuduntulevaisuus.fi##:matches-path(/uutiset)div:matches-attr(class=" "):
 www.maaseuduntulevaisuus.fi##main#main:style(padding-bottom: 0px !important;)
 www.maaseuduntulevaisuus.fi##footer>div>div>div>div>div>div:has-text(Mediamyynti):upward(1)
 www.maaseuduntulevaisuus.fi##div:matches-attr(class="/adElement/"):upward(2)
+www.maaseuduntulevaisuus.fi##section>div>div:matches-attr(class=/MainLane_laneItem__/):style(margin-bottom: 0px !important;)
+www.maaseuduntulevaisuus.fi##div:matches-attr(class=/Header_loginArea__/)
+
+||widget.weatherproof.fi/weather/*$domain=maaseuduntulevaisuus.fi,important
 
 ! Mikrobitti.fi
 www.mikrobitti.fi##.lazyload-wrapper:style(margin-bottom: 15px)
@@ -787,6 +836,11 @@ www.mikrobitti.fi##div#skyscraper-height-div>div:style(margin: 0px auto !importa
 www.mikrobitti.fi##div#skyscraper-height-div>section:style(padding-bottom: 0px !important;)
 www.mikrobitti.fi##div#skyscraper-height-div>section>button:style(margin-bottom: 15px !important;)
 www.mikrobitti.fi##div>a[href*="twitter.com/@"]
+www.mikrobitti.fi##div:matches-attr(class="/ToastNotification__Wrapper/"):upward(2)
+www.mikrobitti.fi##section>div>div>div>a
+www.mikrobitti.fi##p.subheading
+www.mikrobitti.fi##aside:has(h3:has-text(LUE MYÖS))
+www.mikrobitti.fi##section>div:has(div:has-text(Artikkeliin liittyvät aiheet)):style(border-bottom: 0px transparent !important;)
 www.mikrobitti.fi##div>div>div>div#almad-giantBox-2:upward(3):style(margin: 0px auto !important;)
 www.mikrobitti.fi##div>p:has-text(Vaihde:):upward(1):style(width: 90% !important;)
 www.mikrobitti.fi##div>span:has-text(Juuri nyt:):upward(5)
@@ -806,6 +860,8 @@ www.mikrobitti.fi##title:has-text(Tilaajille):upward(4)
 www.mikrobitti.fi##title:has-text(Tilaajille):upward(a)
 
 ||www.mikrobitti.fi/api/feed/v2/teaser/partnercontent/*$important
+||handshake.gravito.net/api/*$domain=mikrobitti.fi,important
+||iroweb.iro.fi/ALMATALENT/*$important
 
 ! moontv.fi
 moontv.fi###facebook
