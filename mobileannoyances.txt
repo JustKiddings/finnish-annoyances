@@ -110,6 +110,13 @@ yle.fi##p.yle__article__paragraph:has(:has-text(Lisää)a[href])
 yle.fi##h3:has-text(Lähetä uutiskuva):upward(div[data-analytics-headline-link])
 yle.fi##div:matches-attr(class="/Group__Container/"):has(h3:has-text(jutut talteen))
 yle.fi##div:not(:matches-attr(class="/Card__Container/"))>div:matches-attr(class="/GridSystem__GridCell/"):has([href*="areena.yle.fi"])
+yle.fi##button[data-testid="header-login-button"]
+yle.fi##div[role=list][aria-label="Pentulivessä whippetit"]
+yle.fi##button#share-menu-button
+yle.fi##article>div>div>div:has(button[aria-label="Näytä kaikki aiheet"])
+yle.fi##section[aria-label="Suosittelemme"]
+yle.fi##p:has(strong:has-text(Lue lisää))
+yle.fi###header-2023-drawer>div:has-text(Kokeile)
 
 ||images.cdn.yle.fi/image/upload/w_*,ar_1.7777777777777777*,c_fill,g_faces/q_auto:eco,f_auto,fl_lossy/*/$image
 ||tag-manager.yle.fi/ylefi-production.js$script,1p,important
