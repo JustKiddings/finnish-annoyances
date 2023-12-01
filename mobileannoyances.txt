@@ -104,6 +104,7 @@ yle.fi##div[data-analytics-headline-link]:has(h3:has-text(Olitko paikalla?)):upw
 yle.fi##section:matches-attr(class=/Carousel__Container/)
 yle.fi##p.yle__article__paragraph:has-text(uutisvinkki)
 yle.fi##p.yle__article__paragraph:has-text(Areenassa)
+yle.fi##article.yle__article>section.yle__article__content>div:has-text(Lisää:)
 yle.fi##:matches-path(/a/)figure:has-text(Audio)
 yle.fi##p.yle__article__paragraph:has-text(Tästä linkistä voit kuunnella)
 yle.fi##p.yle__article__paragraph:has(:has-text(Lisää)a[href])
