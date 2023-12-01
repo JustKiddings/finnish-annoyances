@@ -88,7 +88,7 @@ yle.fi##button[aria-label="Jaa ohjelma"]
 yle.fi##.yle-header-action-tunnus.yle-header-action
 yle.fi##div[role="list"]>div:matches-attr(class="/GridSystem__GridCell/"):style(margin: 0px -8px -8px !important;)
 yle.fi##div#main-bottom>div:matches-attr(class="/GridSystem__GridCell/"):style(margin: 0px -8px 0px !important;)
-yle.fi##span:matches-attr(class="/StoryCommentsCount__Comments/")
+yle.fi##a:matches-attr(class="/StoryCommentsCount__Comments/")
 yle.fi##a[href*="yle.onelink.me"]:has-text(Avaa Yle-sovelluksessa)
 yle.fi##a[href*="isWebBookmark"]:upward(div)
 yle.fi##footer.yle__article__footer
