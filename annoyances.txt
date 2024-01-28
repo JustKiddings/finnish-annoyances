@@ -878,7 +878,6 @@ maaseuduntulevaisuus.fi##div:matches-attr(class=/Header_loginArea__/)
 ! Mikrobitti.fi
 mikrobitti.fi##.lazyload-wrapper:style(margin-bottom: 15px)
 mikrobitti.fi###skyscraper-height-div:style(padding-bottom: 0px !important;)
-mikrobitti.fi##+js(cookie-remover, Bhb2CdOB3V)
 mikrobitti.fi##a[href*="/uutiset"][target="_self"][rel="noopener"][data-test="mainTeaser"]:style(border-bottom: 0px solid transparent !important;)
 mikrobitti.fi##a[href*="facebook.com/Mikrobitti"]
 mikrobitti.fi##a[href*="mailto:?"][title="Jaa sähköpostilla"]:upward(1)
@@ -1377,12 +1376,10 @@ yle.fi##div#header-2023-bar>div>div:not(div[tabindex])
 yle.fi##nav>ul>li:has-text(Lähetä uutiskuva tai -video)
 yle.fi##div:matches-attr(class=/GridSystem__GridCell/):not(div#desktop-separator):style(border-radius: 0px !important;)
 yle.fi##.yle__article__header>div:empty
-yle.fi##figure:has-text(Video)
 yle.fi##header>div>div:has-text(Jaa)
 yle.fi##header>div:has(time):style(margin-bottom: 24px !important;)
 yle.fi##article>header>p:style(margin-bottom: 0px !important;)
 yle.fi##div[aria-label="Pentulivessä whippetit"]
-yle.fi##:matches-path(/^/$/)div:matches-attr(class=/GridMedia__StyledInlineVideo/)
 yle.fi##div:matches-attr(class=/Group__GroupBottomFrame/):has(svg[aria-label="Areena"])
 yle.fi##section:matches-attr(class=/Carousel/)
 yle.fi##section[aria-label="Suosittelemme"]:upward(1)
@@ -1419,27 +1416,22 @@ yle.fi###ydd-article-related-content
 yle.fi##details:matches-attr(class=/ydd-article-tags__details/)
 yle.fi##.ydd-areena-player-wrapper
 yle.fi##.js-ydd-share-links
-yle.fi##article>div>div:has(a:matches-attr(aria-label=/Lisää artikkeleita/))
+yle.fi##article>div>div>div>div>div>div:has(a:matches-attr(aria-label=/Lisää artikkeleita/))
 yle.fi##section.yle__article__content>p:has(strong):has-text(Kuuntele)
 yle.fi##div.post-content>p:has-text(Lue myös:)
 yle.fi##div.post-content>p:has-text(Lue myös):upward(1)>p:has(a)
 yle.fi##div:matches-attr(class=/RoundedCorners/):has-text(podcast:)
 yle.fi##:matches-path(/^/$/)div:matches-attr(class=/GridSystem__GridCell/):has-text(Kerro meille)
+yle.fi##button[aria-label="Jaa ohjelma"]
+yle.fi##a:matches-attr(class=/StoryCommentsCount/)
 
 ||tag-manager.yle.fi/ylefi-production.js$1p,important
-||login.api.yle.fi/v1/user/login$1p,$redirect=noop.js,important
 ||images.cdn.yle.fi/image/upload/login-banner-bgr.png$image
 ||comments.api.yle.fi/v1/topics/*$important
 ||yle-recommender-front.api.yle.fi/v3/recommendations/*$important
 ||metrics.api.yle.fi/v2/labels/pageload/articles.json$important
 ||endpoint.finnpanel.fi^$domain=yle.fi,important
-||article-audio-backend-prod.c1.yle.fi/*.mp3$media,1p,important
 ||tag-manager.yle.fi/uutiset-production.js$important
-||player-v2.yle.fi/MediaSDK.*.js$script,important
-||player-v2.yle.fi/*.js$domain=yle.fi
-||login.api.yle.fi/v1/user/login$important
-@@||player-v2.yle.fi/*.js$domain=areena.yle.fi
-@@||player-v2.yle.fi/*.js$script,domain=areena.yle.fi
 ||yle-consent-sdk.yle.fi/v2/*.js
 ||tunnus-sdk.yle.fi/v1/index.js$1p
 @@tunnus-sdk.yle.fi/v1/index.js$domain=areena.yle.fi
